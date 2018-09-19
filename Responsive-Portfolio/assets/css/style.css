@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+  background: url(../images/stripes-light.png);
+  background-repeat: repeat;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Georgia", Times, Times New Roman, serif;
+}
+h1 {
+  font-size: 29px;
+  font-weight: bold;
+}
+h3 {
+  font-size: 22px;
+}
+header {
+  background: #ffffff;
+  height: 93px;
+  max-width: 100%;
+  border-bottom: 2px solid #cccccc;
+  margin-bottom: 40px;
+}
+.logo {
+  color: #ffffff;
+  background-color: #4aaaa5;
+  padding: 0 30px;
+  float: left;
+  height: 93px;
+  line-height: 93px;
+}
+nav {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+.navigation-item {
+  font-size: 18px;
+  color: #979ca7;
+  padding-left: 19px;
+  padding-right: 19px;
+  text-decoration: none;
+}
+.navigation-item:hover {
+  color: #111111;
+  cursor: pointer;
+}
+.navigation-item:last-child {
+  padding-right: 0;
+}
+nav .divider {
+  color: #dddddd;
+}
+.banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.banner,
+.main-section {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-section {
+  width: 960px;
+  flex: 1;
+  border: 1px solid #dddddd;
+  background-color: #ffffff;
+  color: #999999;
+  line-height: 34px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.main-section .content {
+  padding: 45px 30px 30px 30px;
+}
+.section-header {
+  color: #4aaaa5;
+}
+hr {
+  border-top: 0;
+  border-bottom: 3px solid #dddddd;
+  margin-top: 27px;
+  margin-bottom: 20px;
+}
+.profile-pic {
+  width: 256px;
+  float: left;
+  margin-right: 24px;
+  margin-bottom: 20px;
+}
+footer {
+  font-size: 12px;
+  border-top: 4px solid #4aaaa5;
+  width: 100%;
+  background-color: #666666;
+  color: #999999;
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 42px;
+  padding-bottom: 10px;
+}
+.thumbnails {
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.thumbnail {
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+.thumbnail h3 {
+  background-color: #4aaaa5;
+  position: absolute;
+  bottom: 30px;
+  line-height: 62px;
+  color: #ffffff;
+  width: 100%;
+}
+input {
+  width: 100%;
+  font-size: 13px;
+  color: #999999;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  margin-right: 30px;
+  box-sizing: border-box;
+}
+textarea {
+  width: 100%;
+  height: 200px;
+  color: #999999;
+  font-size: 13px;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  margin-right: 30px;
+  box-sizing: border-box;
+}
+label {
+  margin-top: 10px;
+  display: block;
+}
+.submit-button {
+  background: #4aaaa5;
+  line-height: 22px;
+  width: 116px;
+  font-size: 20px;
+  color: #ffffff;
+}
+.new-window:hover {
+  color: #111111;
+  cursor: pointer;
+}
+.new-window {
+  text-decoration: none;
+  color: #ffffff;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 980px) {
+  .logo {
+    margin-left: 52px;
+  }
+  .main-section {
+    margin-left: 52px;
+    max-width: 710px;
+  }
+  #my-nav {
+    margin-right: 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .logo {
+    margin-left: 20px;
+  }
+  .main-section {
+    margin-left: 52px;
+    max-width: 594px;
+  }
+  .thumbnail,
+  .thumbnail img {
+    width: 533px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 640px) {
+  .banner {
+    flex-direction: column;
+  }
+  .logo {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding: 0;
+  }
+  header {
+    height: 160px;
+  }
+  #my-nav .navigation-item .divider {
+    line-height: 66px;
+    height: 66px;
+  }
+
+  .navigation-item:first-child {
+    padding-left: 0;
+  }
+  #my-nav {
+    height: 66px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-right: 0;
+  }
+  .main-section {
+    max-width: 536px;
+    margin-left: 22px;
+  }
+  .profile-pic {
+    width: 100%;
+  }
+  .thumbnail,
+  .thumbnail img {
+    width: 476px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  .main-section {
+    width: 100%;
+    margin-left: 0;
+  }
+  .content {
+    width: 100%;
+  }
+  .thumbnail,
+  .thumbnail img {
+    max-width: 275px;
+    width: 100%;
+    height: auto;
+  }
+}

@@ -1,0 +1,40 @@
+html,
+body {
+  min-height: 100vh;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+footer {
+  bottom: 0;
+}
+.portfolio-font {
+  font-size: 3vw;
+}
+body {
+  font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+  background: url(../images/stripes-light.png);
+  background-repeat: repeat;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Georgia", Times, Times New Roman, serif;
+}
+h1 {
+  font-size: 29px;
+  font-weight: bold;
+}
+h3 {
+  font-size: 22px;
+}
+.border-3 {
+  border-top-width: 3px !important;
+}
