@@ -670,7 +670,7 @@ $(document).ready(function() {
     $("#dash-zone").text(game.dashes.join(""));
     $("#remaining").text(game.remaining.length);
     $("#answer").text(game.movie);
-    $("#misses").text(game.misses);
+    $("#misses").text(game.misses + " of " + MAX_MISSES);
     $("#wins").text(wins);
     $("#losses").text(losses);
   }
