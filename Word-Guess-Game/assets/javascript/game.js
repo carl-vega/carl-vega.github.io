@@ -573,6 +573,7 @@ $(document).ready(function() {
       movie: movie,
       dashes: dashes,
       remaining: remaining,
+      lettersToGuess: remaining.length,
       misses: 0,
       link: link
     };
@@ -585,7 +586,7 @@ $(document).ready(function() {
     for (i = 0; i < letters.length; i++) {
       $("#buttons").append(
         $("<button>")
-          .addClass("click-letter")
+          .addClass("click-letter text-monospace")
           .attr("id", letters[i])
           .text(letters[i])
       );
@@ -594,9 +595,13 @@ $(document).ready(function() {
   }
 
   function clickButton(event) {
-    var clicked = $(event.target);
-    var letter = clicked.text();
-    pickLetter(letter);
+    if (game) {
+      var clicked = $(event.target);
+      var letter = clicked.text();
+      pickLetter(letter);
+    } else {
+      start();
+    }
   }
 
   function keystroke(event) {
@@ -606,6 +611,47 @@ $(document).ready(function() {
     } else {
       start();
     }
+  }
+
+  function updateMissesImage() {
+    if (game.misses > 0)
+      $("#them-img").attr(
+        "src",
+        "./assets/images/rocketship-" + game.misses + ".svg"
+      );
+    else $("#them-img").removeAttr("src");
+  }
+
+  function updateHitsImage() {
+    var launch = 0;
+    var remainingLetters = game.remaining.length;
+    var ratio = remainingLetters / game.lettersToGuess;
+    switch (ratio) {
+      case 0.8:
+        launch = 1;
+        break;
+      case 0.7:
+        launch = 2;
+        break;
+      case 0.6:
+        launch = 3;
+        break;
+      case 0.5:
+        launch = 4;
+        break;
+      case 0.35:
+        launch = 5;
+        break;
+      case 0.2:
+        launch = 6;
+        break;
+      case 0:
+        launch = 7;
+        break;
+    }
+    if (launch > 0)
+      $("#my-img").attr("src", "./assets/images/rocketship-" + launch + ".svg");
+    else $("#my-img").removeAttr("src");
   }
 
   function pickLetter(letter) {
@@ -673,6 +719,8 @@ $(document).ready(function() {
     $("#misses").text(game.misses + " of " + MAX_MISSES);
     $("#wins").text(wins);
     $("#losses").text(losses);
+    updateHitsImage();
+    updateMissesImage();
   }
 
   setTimeout(function() {
