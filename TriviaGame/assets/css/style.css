@@ -1,0 +1,45 @@
+body,
+html {
+  height: 100% !important;
+}
+
+.logo {
+  margin-bottom: 16px;
+}
+
+select {
+  margin-right: 10px;
+}
+
+#answers {
+  min-height: 300px;
+}
+
+#question {
+  text-align: center;
+  max-width: 90%;
+}
+
+#trivia,
+#question,
+#results-section,
+#results {
+  height: 100% !important;
+}
+
+#result-title,
+#result-numbers,
+#result-questions {
+  width: 100% !important;
+}
+
+body {
+  background-image: url("../images/background-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#game-area,
+#q-card {
+  min-height: 600px !important;
+}
