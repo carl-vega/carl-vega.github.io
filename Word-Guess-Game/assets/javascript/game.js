@@ -547,6 +547,9 @@ $(document).ready(function() {
     if (game) {
       resetButtons();
     }
+
+    $("#my-img").removeAttr("src");
+
     // position in the array
     var order = Math.floor(Math.random() * 249);
     // add imdbID to link in index
@@ -626,32 +629,30 @@ $(document).ready(function() {
     var launch = 0;
     var remainingLetters = game.remaining.length;
     var ratio = remainingLetters / game.lettersToGuess;
-    switch (ratio) {
-      case 0.8:
-        launch = 1;
-        break;
-      case 0.7:
-        launch = 2;
-        break;
-      case 0.6:
-        launch = 3;
-        break;
-      case 0.5:
-        launch = 4;
-        break;
-      case 0.35:
-        launch = 5;
-        break;
-      case 0.2:
-        launch = 6;
-        break;
-      case 0:
-        launch = 7;
-        break;
+    if (ratio < 0.8) {
+      launch = 1;
     }
-    if (launch > 0)
+    if (ratio < 0.7) {
+      launch = 2;
+    }
+    if (ratio < 0.6) {
+      launch = 3;
+    }
+    if (ratio < 0.5) {
+      launch = 4;
+    }
+    if (ratio < 0.3) {
+      launch = 5;
+    }
+    if (ratio < 0.2) {
+      launch = 6;
+    }
+    if (ratio <= 0) {
+      launch = 7;
+    }
+    if (launch > 0) {
       $("#my-img").attr("src", "./assets/images/rocketship-" + launch + ".svg");
-    else $("#my-img").removeAttr("src");
+    }
   }
 
   function pickLetter(letter) {
