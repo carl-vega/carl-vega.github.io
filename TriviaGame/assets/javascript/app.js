@@ -1,13 +1,14 @@
 $(document).ready(function() {
   // default time is 30 seconds per question
-  var DEFAULT_TIME = 5 * 1000;
-  var DISPLAY_ANSWER_TIME = 0.5 * 1000;
+  var DEFAULT_TIME = 20 * 1000;
+  var DISPLAY_ANSWER_TIME = 2 * 1000;
   var questions;
   var currentQuestion;
   var timeOption;
   var correctQ = [];
   var incorrectQ = [];
-  var answer = [];
+  var secondsRemaining;
+  var secondsInterval;
 
   function buildUrl() {
     // variables
@@ -47,7 +48,7 @@ $(document).ready(function() {
     var answers = [].concat(question.incorrect_answers);
 
     // randomly insert the right answer into the list of answers
-    var insert = Math.random(0, answers.length);
+    var insert = Math.floor(Math.random() * Math.floor(answers.length));
     answers.splice(insert, 0, question.correct_answer);
 
     // display the question and answers
@@ -61,25 +62,36 @@ $(document).ready(function() {
       );
     }
     $(".list-group-item").on("click", pickAnswer);
-    timer = startTimer();
+    startTimer();
   }
 
   function startTimer() {
-    return setTimeout(function() {
+    secondsRemaining = (timeOption || DEFAULT_TIME) / 1000;
+    countdown();
+    secondsInterval = setInterval(countdown, 1000);
+    timer = setTimeout(function() {
       ranOutOfTime();
     }, timeOption || DEFAULT_TIME);
   }
 
+  function countdown() {
+    $("#seconds").text(secondsRemaining + " seconds remaining");
+    secondsRemaining--;
+  }
+
   function pickAnswer(event) {
-    clearTimeout(timer);
-    answer = $(event.target).html();
+    var answer = $(event.target).html();
     var rightAnswer = questions[currentQuestion].correct_answer;
     if (answer === rightAnswer) correct();
     else incorrect();
   }
 
   function ranOutOfTime() {
-    $("#answers").html("Ran out of time!");
+    $("#answers").html(
+      "Ran out of time! The answer was " +
+        questions[currentQuestion].correct_answer
+    );
+    incorrectQ.push(questions[currentQuestion].question);
     nextQuestion();
   }
 
@@ -98,6 +110,8 @@ $(document).ready(function() {
   }
 
   function nextQuestion() {
+    clearTimeout(timer);
+    clearInterval(secondsInterval);
     currentQuestion++;
     if (currentQuestion >= questions.length) {
       return gameOver();
@@ -144,6 +158,8 @@ $(document).ready(function() {
     // api url query input
     var url = buildUrl();
     console.log("Requesting URL " + url);
+    correctQ = [];
+    incorrectQ = [];
     $("#correct-num").empty();
     $("#incorrect-num").empty();
     $("#correct-q").empty();
@@ -157,6 +173,7 @@ $(document).ready(function() {
       timeOption = $("#timer").val();
       askQuestion();
       $("#trivia").addClass("d-none");
+      $("#results-section").addClass("d-none");
       $("#q-a").removeClass("d-none");
     });
   }
