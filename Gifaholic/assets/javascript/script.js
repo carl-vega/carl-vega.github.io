@@ -98,7 +98,7 @@ $(document).ready(function() {
     $("#pill-box").append(newPill);
   }
 
-  $(document).on("click", ".badge", function() {
+  $(document).on("click touch", function() {
     $(this).gifQuery();
   });
 
