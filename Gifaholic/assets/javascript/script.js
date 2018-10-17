@@ -88,7 +88,7 @@ $(document).ready(function() {
 
   // search bar submission function to create buttons/badge-pills to be queried later
   function pillMaker(text) {
-    var newPill = $("<a>");
+    var newPill = $("<button>");
     newPill
       .attr("value", text)
       .attr("href", "#")
@@ -97,10 +97,6 @@ $(document).ready(function() {
       .text(text);
     $("#pill-box").append(newPill);
   }
-
-  $(document).on("click touch", function() {
-    $(this).gifQuery();
-  });
 
   // function to pause and play gif upon click of gif
   function stillAnimate() {
