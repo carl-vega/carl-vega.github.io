@@ -94,10 +94,13 @@ $(document).ready(function() {
       .attr("href", "#")
       .addClass("badge badge-pill badge-primary")
       .click(gifQuery)
-      .on("click touchstart", gifQuery)
       .text(text);
     $("#pill-box").append(newPill);
   }
+
+  $(document).on("click", ".badge", function() {
+    $(this).gifQuery();
+  });
 
   // function to pause and play gif upon click of gif
   function stillAnimate() {
