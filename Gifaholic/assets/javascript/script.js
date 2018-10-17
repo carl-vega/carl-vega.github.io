@@ -31,7 +31,6 @@ $(document).ready(function() {
   function gifQuery(event) {
     event.preventDefault();
     $("#gif-dump").empty();
-
     var query = $(event.target)
       .text()
       .trim();
