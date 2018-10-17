@@ -94,6 +94,7 @@ $(document).ready(function() {
       .attr("href", "#")
       .addClass("badge badge-pill badge-primary")
       .click(gifQuery)
+      .on("click touchstart", gifQuery)
       .text(text);
     $("#pill-box").append(newPill);
   }
