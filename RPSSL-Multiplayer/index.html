@@ -1,5 +1,3 @@
-<!-- By DMacks (talk) - Edited (repositioned elements) version of File:Pierre ciseaux feuille lézard spock.svg, which is by Nojhan and licensed GFDL/cc-by-sa-3.0,2.5,2.0,1.0, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=13241299 -->
-
 <!DOCtype html>
 
 <html>
@@ -15,107 +13,45 @@
 </head>
 
 <body>
-    <div class="container" id="p-one">
-        <div id="modal"></div>
-        <div id="left">
-            <div id="menu">
-                <div id="top-menu">
-                    <a class="btn-floating btn-large waves-effect waves-light red" id="minus"><i class="material-icons">exposure_neg_1</i></a>
-                    <form id="counter">
-                        <div class="input-field">
-                            <textarea id="num-games" class="materialize-textarea"></textarea>
-                            <label for="textarea1">Number of Matches</label>
+    <div class="container">
+
+        <div class="row">
+            <!-- take in username and then hide like a ninja-->
+            <div class="modal-open" id="name">
+                <form class="col s12">
+                    <div class="row modal-content">
+                        <div class="input-field col s6">
+                            <input id="username" type="text" required>
+                            <label for="username">Add Your Name</label>
+                            <button class="btn waves-effect waves-light modal-close" type="submit" name="action">Play
+                                <i class="material-icons right">send</i>
+                            </button>
                         </div>
-                    </form>
-                    <a class="btn-floating btn-large waves-effect waves-light red" id="plus"><i class="material-icons">exposure_plus_1</i></a>
-                </div>
-                <div id="information">
-                    <ul class="collapsible popout">
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">filter_drama</i>Overview</div>
-                            <div class="collapsible-body" id="overview"><span><img src="assets/images/Game-Overview.svg"></span></div>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="table-container card" id="win-loss-tie">
-                <div class="card-body">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Wins</th>
-                                <th>Loses</th>
-                                <th>Ties</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>Rock</th>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <th>Paper</th>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <th>Scissors</th>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <th>Spock</th>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <th>Lizard</th>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                        </tbody>
-
-                    </table>
-
-                </div>
-            </div>
-        </div>
-        <div class="card" id="chat-area">
-            <div class="card-body">
-                <div id="chat-history">
-                    <ul>
-                        <li>
-                            rabbe rabble rabble
-                        </li>
-                    </ul>
-                </div>
-                <form id="input">
-                    <input id="message">
-                    <button id="submit" type="submit">Send<i class="material-icons">send</i></button>
+                    </div>
                 </form>
             </div>
-        </div>
 
-        <div id="button-area">
-            <div id="buttons">
-                <a class="btn-floating btn-large waves-effect waves-light red" id="minus">Ro</a>
-                <a class="btn-floating btn-large waves-effect waves-light red" id="minus">Sc</a>
-                <a class="btn-floating btn-large waves-effect waves-light red" id="minus">Pa</a>
-                <a class="btn-floating btn-large waves-effect waves-light red" id="minus">Sp</a>
-                <a class="btn-floating btn-large waves-effect waves-light red" id="minus">Li</a>
+            <h1 id="player"></h1>
+            <h5 id="info"></h5>
+
+            <!-- when ninja hides smoke bomb entrance -->
+            <div class="col s12 hide" id="buttons">
+                <div class="row center-align">
+                    <button class="btn waves-effect waves-light">Rock</button>
+                    <button class="btn waves-effect waves-light">Paper</button>
+                    <button class="btn waves-effect waves-light">Scissors</button>
+                    <button class="btn waves-effect waves-light">Spock</button>
+                    <button class="btn waves-effect waves-light">Lizard</button>
+                </div>
             </div>
+
+            <h3 id="winner"></h3>
+
         </div>
     </div>
-    <footer id="p-two">
-    </footer>
+
+    </div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
