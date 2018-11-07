@@ -12,13 +12,21 @@ $(document).ready(function() {
   firebase.initializeApp(config);
 
   var database = firebase.database();
+  var sidenavElement = document.querySelectorAll(".sidenav");
+  var sidenav = M.Sidenav.init(sidenavElement)[0];
 
   function gameChanged(snapshot) {
     var players = snapshot.val();
+    var user = localStorage.getItem("name");
+
     if (!players) {
       return;
     }
     var usernames = Object.keys(players);
+    if (usernames.length === 1 && usernames[0] === user) {
+      var choice = snapshot.val()[user].choice;
+      $("#info").text("You chose " + choice + ". Waiting for another player.");
+    }
     if (usernames.length >= 2) {
       determineWinner(players[usernames[0]], players[usernames[1]]);
       database.ref("players").set({});
@@ -33,7 +41,8 @@ $(document).ready(function() {
     localStorage.setItem("name", username);
     $("#name").addClass("hide");
     $("#buttons").removeClass("hide");
-    $("#player").text(username + ", throw a gesture");
+    $("#alerts").removeClass("hide");
+    $("#info").text(username + ", throw a gesture");
     database.ref("players/" + username).set(null);
   });
 
@@ -57,49 +66,71 @@ $(document).ready(function() {
   }
 
   function draw() {
-    $("#winner").text("It is a draw");
-    $("#info").empty();
-    $("button").removeClass("indigo");
+    $("#info").text("It is a draw");
   }
 
   function declareWinner(winner, loser) {
-    $("#winner").text(
+    $("#info").text(
       winner.choice + " beats " + loser.choice + ". " + winner.name + " wins"
     );
-    $("#info").empty();
-    $("button").removeClass("indigo");
   }
 
   function option(event) {
-    var choice = $(this).text();
-    $(this).addClass("indigo");
-    $("#info").text("you chose " + choice);
-    $("#winner").empty();
+    var choice = $(this).attr("data-choice");
     database.ref("players/" + localStorage.getItem("name")).set({
       name: localStorage.getItem("name"),
       choice: choice
     });
   }
+  function inlineChat(event) {
+    event.preventDefault();
+    var message = $("#yackity").val();
+    var name = localStorage.getItem("name");
+    database.ref("messages").push(name + " - " + message);
+    document.getElementById("yackity").val("");
+  }
 
-  // function playerA() {
+  function onlineChat(snapshot) {
+    var chatHistory = snapshot.val();
+    var chatDiv = $("<li>");
+    chatDiv.attr("id", snapshot.key);
+    chatDiv.text(chatHistory);
+    $("#schmackity").append(chatDiv);
+    document.getElementById(snapshot.key).scrollIntoView();
 
-  // }
+    if (!sidenav.isOpen) {
+      M.toast({ html: chatHistory });
+    }
 
-  //   function restart() {}
-
-  var elem = document.querySelector(".collapsible.popout");
-  var instance = M.Collapsible.init(elem, {
-    accordion: false
-  });
+    $(".reset")
+      .closest("form")
+      .find("input[type=text], text")
+      .val("");
+  }
 
   document.addEventListener("DOMContentLoaded", function() {
     var elems = document.querySelectorAll(".modal");
     var instances = M.Modal.init(elems, options);
   });
 
-  $("#buttons button").on("click", option);
+  $("img[usemap]").rwdImageMaps();
+
+  $("#slide-out").on("submit", inlineChat);
+
+  $("map area").on("click", option);
+
   database.ref("players").on("value", gameChanged);
+
+  database
+    .ref("messages")
+    .limitToLast(1)
+    .on("child_added", onlineChat);
+
   $("#username")
     .val(localStorage.getItem("name"))
     .focus();
+
+  $(window).on("beforeunload", function() {
+    database.ref("messages").set({});
+  });
 });
