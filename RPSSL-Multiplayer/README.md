@@ -13,9 +13,9 @@ There is a message area is opened via a message icon. [Chat Bubble](assets/image
 Once the chat bubble is clicked the message area opens. [Message Area](assets/images/markdown-images/Message-Area.png)
 When messages are sent to player with chat area closed, the message can be seen from as a popup. [Popup Message](assets/images/markdown-images/Popup-Message.png)
 
-## Design
+## Design -Frontend
 
-### Frontend
+### HTML
 
 The design simplistic, with material design implementation via Materialize CSS plugin. A modal is used to take in user name input. The main game area is a card with an image that also displays which options win against the other options.
 
@@ -23,24 +23,42 @@ The text area at the top of the card is cycled to show the necessary message nee
 
 The message area is a sidenav with a scrolling messages. Just like before the player that sends messages does not need to see popup message if they have sent it.
 
-Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+The game area has an area map to create the click handling function. Also thanks to another github user the area map was resize via a jquery file. Unfortunately, due to the design the game would clear map coordinates. As a fix the game will trigger a resize at a certain point.
 
-Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+### Javascript & JQuery
 
-Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+Username is store in local storage for convience. Once the username is added it will autofill from the saved name.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+Next, the modal is hidden using a hide class attribute, and game area then has the hide class removed. This also brings with it the chat button.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+The chat sidenav uses Materialize javascript method to activate the open and closing. As part of the functionality of the messaging system if the sidenav is closed, and the opposing player messages a toast will popup with the player name and message sent.
 
-Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+The game verifies whether the player has an opponent and if not prompts that player is waiting for another player. Only one player should receive this message. Once second player has choosen gesture game immediately compares and states winner, or draw.
 
-License
-For open source projects, say how it is licensed.
+### Backend
 
-Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+All messages and gameplay information is stored on Firebase Database. Both pieces of data are set to empty when needed. If the browser is unloaded via page refresh, closing tab, or closing browser chat history is wiped.
+
+## Support
+
+git.vega@gmail.com
+
+## Contributing
+
+If you choose to contribute to this in any way everything is saved to the repository. The only knowledge need outside of said repository is reading and utilizing [Materialize's Documentation.](https://materializecss.com/)
+
+## Authors and acknowledgment
+
+Carl Vega - Overall design
+
+Andrea Vega - Wicked smarts
+
+Matt Stow - [JQuery plugin](https://github.com/stowball/jQuery-rwdImageMaps)
+
+## License
+
+Open Source
+
+## Project status
+
+At the moment there is not an intention to expand the game, but I may add more later after realizing it needs to be and can be improved.
