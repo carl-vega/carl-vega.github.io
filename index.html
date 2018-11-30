@@ -1,133 +1,227 @@
 <!DOCTYPE html>
+
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- Link to css file -->
+    <link rel="stylesheet" href="style.css"/>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="Bootstrap-Portfolio/assets/css/style.css">
-</head>
+  <body>
+    <nav class="nav-extended grey darken-1">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo"
+          ><img src="images/favicon.ico" />Carl Vega</a
+        >
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+        <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">JavaScript</a></li>
+        </ul> -->
+      </div>
+      <div class="nav-content">
+        <ul class="tabs tabs-transparent">
+          <li class="tab"><a href="#test1">About Me</a></li>
+          <li class="tab"><a class="active" href="#test2">Portfolio</a></li>
+          <!-- <li class="tab"><a href="#test3">Test 3</a></li>
+          <li class="tab"><a href="#test4">Test 4</a></li> -->
+        </ul>
+      </div>
+    </nav>
 
-<body class="d-flex flex-column align-items-end">
-    <div class="w-100 bg-white mb-4 border-bottom border-muted">
-        <div class="container p-0">
-            <div class="row">
-                <div class="col-lg-1"></div>
-                <nav class="navbar p-0 col justify-content-between navbar-expand-lg navbar-light">
-                    <h1 class="p-4 m-0 bg-info text-white">Carl Vega</h1>
-                </nav>
-                <div class="col-lg-1"></div>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="sass.html">Sass</a></li>
+      <li><a href="badges.html">Components</a></li>
+      <li><a href="collapsible.html">JavaScript</a></li>
+    </ul>
+
+    <div class="container">
+      <div class="row">
+        <div id="main-tab" class="col s12">
+          <div class="card">
+            <div class="card-content">
+              <p>
+                To become a retail manager there must be effort put forth, and many
+                lessons learned along the way. But the most important lesson is that
+                change is necessary sometimes to continue to move forward. So, when
+                hard work comes I am resolute, and when an adaptation is required I
+                evolve. This is also my approach to coding, I am determined and
+                flexible.
+              </p>
+              <br />
+              <p>
+                As a techvangelist, I fill my free time viewing different
+                applications and technology theories, viewing the newest gadgets,
+                programs, and technologies. All of this build toward my goal of
+                understanding the latest hardware and software available or in the
+                coming future.
+              </p>
+              <br />
+              <p>
+                On a personal level, I long to establish a gritty personality, but
+                grit is a long-term compounding goal for achieving expertise. That
+                is my philosophy with technology, to go forward and create something
+                that has an impact. It will not happen in a singular moment, but in
+                the multitude of moments that brings me one step closer each time.
+              </p>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="container flex-grow-1 p-0">
-        <section class="row flex-grow-1">
-            <div class="col-lg-1  p-0"></div>
-            <div class="col-lg-10 p-4 bg-white border border-muted">
-                <div>
-                    <h1 class="pb-4 pt-1 m-0 text-info">$Dollar Menu</h1>
-                    <hr class="m-0">
-                </div>
-                <div class="row pt-4">
-                    <div class="col-lg-1"></div>
-                    <div class="col-lg-10 text-muted">
-                        <div class="media row">
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="card bg-dark text-white mb-4">
-                                    <img class="card-img" src="Basic-Portfolio/assets/images/thumb/apple-black-and-white-camera-6482.png"
-                                        alt="Time to Tinker">
-                                    <div class="card-img-overlay h-100 d-flex flex-column justify-content-end p-0">
-                                        <h3 class="card-title text-center p-2 badge badge-info w-100">
-                                            <a href="Basic-Portfolio/index.html" target="_blank" class="new-window portfolio-font text-white">Basic</a>
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="card bg-dark text-white mb-4">
-                                    <img class="card-img" src="Basic-Portfolio/assets/images/thumb/blogging-business-coding-34140.png"
-                                        alt="Time to Code">
-                                    <div class="card-img-overlay h-100 d-flex flex-column justify-content-end p-0">
-                                        <h3 class="card-title text-center p-2 badge badge-info w-100">
-                                            <a href="Responsive-Portfolio/index.html" target="_blank" class="new-window portfolio-font text-white">Responsive</a>
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="card bg-dark text-white mb-4">
-                                    <img class="card-img" src="Basic-Portfolio/assets/images/thumb/adult-architecture-athlete-221210.png"
-                                        alt="Time to Sweat">
-                                    <div class="card-img-overlay h-100 d-flex flex-column justify-content-end p-0">
-                                        <h3 class="card-title text-center p-2 badge badge-info w-100">
-                                            <a href="Unit4-game/index.html" target="_blank" class="new-window portfolio-font text-white">Meeple
-                                                Reeple</a>
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="card bg-dark text-white mb-4">
-                                    <img class="card-img" src="Basic-Portfolio/assets/images/thumb/adult-architecture-athlete-221210.png"
-                                        alt="Time to Sweat">
-                                    <div class="card-img-overlay h-100 d-flex flex-column justify-content-end p-0">
-                                        <h3 class="card-title text-center p-2 badge badge-info w-100">
-                                            <a href="Gifaholic/index.html" target="_blank" class="new-window portfolio-font text-white">Gifaholic</a>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="card bg-dark text-white mb-4">
-                                    <img class="card-img" src="Basic-Portfolio/assets/images/thumb/arts-build-close-up-273230.png"
-                                        alt="Time to Do">
-                                    <div class="card-img-overlay h-100 d-flex flex-column justify-content-end p-0">
-                                        <h3 class="card-title text-center p-2 badge badge-info w-100">
-                                            <a href="Bootstrap-Portfolio/index.html" target="_blank" class="new-window portfolio-font text-white">BootStrap</a>
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="card bg-dark text-white mb-4">
-                                    <img class="card-img" src="Basic-Portfolio/assets/images/thumb/cinema-dark-display-8158.jpg"
-                                        alt="Time to Chill">
-                                    <div class="card-img-overlay h-100 d-flex flex-column justify-content-end p-0">
-                                        <h3 class="card-title text-center p-2 badge badge-info w-100">
-                                            <a href="Word-Guess-Game/index.html" target="_blank" class="new-window portfolio-font text-white">Word
-                                                Game</a>
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="card bg-dark text-white mb-4">
-                                    <img class="card-img" src="Basic-Portfolio/assets/images/thumb/raleigh-cityscape.png"
-                                        alt="Time to Be Home">
-                                    <div class="card-img-overlay h-100 d-flex flex-column justify-content-end p-0">
-                                        <h3 class="card-title text-center p-2 badge badge-info w-100">
-                                            <a href="TriviaGame/index.html" target="_blank" class="new-window portfolio-font text-white">Trivia
-                                                Game</a>
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="card bg-dark text-white mb-4">
-                                    <img class="card-img" src="Basic-Portfolio/assets/images/thumb/raleigh-cityscape.png"
-                                        alt="Time to Be Home">
-                                    <div class="card-img-overlay h-100 d-flex flex-column justify-content-end p-0">
-                                        <h3 class="card-title text-center p-2 badge badge-info w-100">
-                                            <a href="RPSSL-Multiplayer/index.html" target="_blank" class="new-window portfolio-font text-white">R-P-S-S-L</a>
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                            </div->
-                        </div>
+    <div id="pro-tab" class="container">
+      <div class="row">
+        <div class="cards-container col s12">
+          <div class="card purple darken-1">
+            <div class="card-content">
+              <div class="card-image">
+                  <img src="images/basic.jpg"
+                  alt="I love Pumkin Spice Everything">
+                  <span class="card-title">
+                    <div class="card-action">
+                        <a href="Basic-Portfolio/index.html">Basic Portfolio</a>
                     </div>
-                    <div class="col-lg-1"></div>
-                </div>
+                  </span>
+              </div>
             </div>
-            <div class="col-lg-1 p-0"></div>
-        </section>
-    </div>
-    <div class="bg-secondary border border-top border-right-0 border-left-0 border-bottom-0 border-info border-3 w-100">
-        <div class="container">
-            <footer class="navbar text-center">
-                <span class="col text-white-50 p-4">&copy; Copyright</span>
-            </footer>
+          </div>
+          <div class="card purple darken-1">
+            <div class="card-content">
+              <div class="card-image">
+                  <img src="images/bootstrap.jpg"
+                  alt="Pull them up by your...">
+                  <span class="card-title">
+                    <div class="card-action">
+                        <a href="Bootstrap-Portfolio/index.html">Boot Strap Portfolio</a>
+                    </div>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="card purple darken-1">
+            <div class="card-content">
+              <div class="card-image">
+                  <img src="images/responsive.jpg"
+                  alt="Responsive Portfolio">
+                  <span class="card-title">
+                    <div class="card-action">
+                        <a href="Responsive-Portfolio/index.html">Responsive Portfolio</a>
+                    </div>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="card purple darken-1">
+            <div class="card-content">
+              <div class="card-image">
+                  <img src="images/word.jpg"
+                  alt="Tip of my tongue">
+                  <span class="card-title">
+                    <div class="card-action">
+                        <a href="Word-Guess-Game/index.html">Word Guess Game</a>
+                    </div>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="card purple darken-1">
+           <div class="card-content">
+              <div class="card-image">
+                  <img src="images/fight.jpg"
+                  alt="Finish him">
+                  <span class="card-title">
+                    <div class="card-action">
+                        <a href="Unit4-game/index.html">Fight Game</a>
+                    </div>
+                </span>
+              </div>
+           </div>
+          </div>
+          <div class="card purple darken-1">
+            <div class="card-content">
+              <div class="card-image">
+                  <img src="images/gif.jpg"
+                  alt="Emoti-gif">
+                  <span class="card-title">
+                    <div class="card-action">
+                        <a href="Gifaholic/index.html">Gifaholic</a>
+                    </div>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="card purple darken-1">
+            <div class="card-content">
+              <div class="card-image">
+                  <img src="images/rochambeau.jpg"
+                  alt="Not that gesture">
+                  <span class="card-title">
+                    <div class="card-action">
+                        <a href="RPSSL-Multiplayer/index.html">Rochambeau</a>
+                    </div>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="card purple darken-1">
+            <div class="card-content">
+              <div class="card-image">
+                  <img src="images/trivia.jpg"
+                  alt="Pull them up by your...">
+                  <span class="card-title">
+                    <div class="card-action">
+                        <a target="_blank"  href="TriviaGame/index.html">Trivial Trivia</a>
+                    </div>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="card purple darken-1">
+            <div class="card-content">
+              <div class="card-image">
+                  <img src="images/node.jpg"
+                  alt="Pull them up by your...">
+                  <span class="card-title">
+                    <div class="card-action">
+                        <a target="_blank"  href="https://github.com/carl-vega/liri-bot-app">Github: Node App</a>
+                    </div>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="card purple darken-1">
+            <div class="card-content">
+              <div class="card-image">
+                  <img src="images/mysql.jpg"
+                  alt="Pull them up by your...">
+                  <span class="card-title">
+                    <div class="card-action">
+                        <a target="_blank" href="Bootstrap-Portfolio/index.html">Placeholder 2</a>
+                    </div>
+                </span>
+              </div>
+            </div>
+          </div> -->
         </div>
+      </div>
     </div>
-</body>
+    </div>
+    <!-- <div id="test3" class="col s12">Test 3</div>
+    <div id="test4" class="col s12">Test 4</div> -->
 
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script></script>
+  </body>
 </html>
