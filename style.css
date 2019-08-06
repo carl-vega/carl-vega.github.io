@@ -1,35 +1,46 @@
-.card > .card-content > .card-image {
-  padding: 0 !important;
+#about-img {
+  background-image: url(./images/about-img.jpg);
+  background-size: cover;
+  height: 700px;
+  width: 1000px;
 }
-.cards-container {
-  column-break-inside: avoid;
+#photo-tag {
+  position: relative;
+  left: 20px;
+  bottom: -640px;
 }
-.cards-container .card {
-  display: inline-block;
-  overflow: visible;
+nav > div > img {
+  padding: 8px;
 }
-
-@media only screen and (max-width: 600px) {
-  .cards-container {
-    -webkit-column-count: 1;
-    -moz-column-count: 1;
-    column-count: 1;
-  }
+#pin-projects > .card {
+  width: calc(33.333333333% - 16px);
+  margin: 8px;
 }
-@media only screen and (min-width: 601px) {
-  .cards-container {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-  }
+.activator {
+  padding-top: 10px;
 }
-@media only screen and (min-width: 993px) {
-  .cards-container {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-  }
+#pin-projects > div > hr,
+#other-projects > div > hr {
+  margin: 20px 0;
 }
-.text-center {
-  text-align: center;
+#other-projects > .card {
+  width: calc(25% - 16px);
+  margin: 8px;
+}
+#pin-projects > div > .card-content,
+#pin-projects > div > .card-reveal,
+#other-projects > div > .card-content,
+#other-projects > div > .card-reveal {
+  padding: 10px 10px 0 10px;
+  margin-bottom: 10px;
+}
+#other-projects > div > div > .card-title {
+  font-size: 18px;
+}
+#other-projects > div > div > p {
+  font-size: 14px;
+}
+#pin-projects > div > div > p > a > i,
+#other-projects > div > div > p > a > i {
+  margin-left: 5px;
 }
