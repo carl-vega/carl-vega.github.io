@@ -15,6 +15,7 @@ nav > div > img {
 #pin-projects > .card {
   width: calc(33.333333333% - 16px);
   margin: 8px;
+  height: 100%;
 }
 .activator {
   padding-top: 10px;
@@ -42,5 +43,8 @@ nav > div > img {
 }
 #pin-projects > div > div > p > a > i,
 #other-projects > div > div > p > a > i {
-  margin-left: 5px;
 }
+/* #pin-projects > div > div > img {
+}
+#pin-projects > div > div > .card-image {
+} */
