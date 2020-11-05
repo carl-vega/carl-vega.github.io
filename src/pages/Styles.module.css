@@ -1,0 +1,18 @@
+.aboutImg {
+  background-image: url(../images/about-img.jpg);
+  background-size: cover;
+  height: 700px;
+  width: 1000px;
+  position: relative;
+}
+.photoCredit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.photoCredit > span {
+  padding: 5px;
+}
+.brandIcon {
+  margin: 5px;
+}
