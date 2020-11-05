@@ -1,5 +1,5 @@
 {
-  "name": "react-gh-pages",
+  "name": "carl-vega.github.io",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -45,13 +45,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/carl-vega/react-gh-pages.git"
+    "url": "git+https://github.com/carl-vega/carl-vega.github.io.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/carl-vega/react-gh-pages/issues"
+    "url": "https://github.com/carl-vega/carl-vega.github.io/issues"
   },
-  "homepage": "https://carl-vega.github.io/react-gh-pages"
+  "homepage": "https://carl-vega.github.io"
 }
