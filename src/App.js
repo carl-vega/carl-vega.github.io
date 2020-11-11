@@ -19,22 +19,22 @@ export default function App() {
           <ul className="right hide-on-med-and-down">
             <li>
               <Link to="/" className="black-text">
-                About Vega
+                Vega
               </Link>
             </li>
             <li>
               <Link to="/portfolio" className="black-text">
-                💼From Vega
+                Codes
               </Link>
             </li>
             <li>
               <Link to="/posts" className="black-text">
-                🧠From Vega
+                Writes
               </Link>
             </li>
             <li>
               <Link to="/contact" className="black-text">
-                Contact Vega
+                Contact
               </Link>
             </li>
           </ul>

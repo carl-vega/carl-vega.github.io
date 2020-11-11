@@ -22,3 +22,57 @@
   margin: 8px;
   height: 100%;
 }
+.iconWrapper {
+  height: 20px;
+}
+.icon {
+  width: 20px;
+}
+.mainWrapper {
+  background-image: url(../images/about-img.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+.mainArea {
+  margin: 0 100px;
+  padding-top: 0;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+}
+.contactWrapper {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+.contactTitle {
+  text-align: right;
+  border-right: 1px solid grey;
+}
+.textCenter {
+  text-align: center;
+}
+.contactMainTitle {
+  text-align: center;
+  margin-top: 0;
+}
+.aboutTitle {
+  margin-top: 0;
+  text-align: end;
+}
+.aboutArea {
+  margin: 20px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  grid-column-start: 2;
+  height: auto;
+  place-self: start;
+  box-shadow: -4px 4px 20px 4px #999;
+}
+.aboutWrapper {
+  background-image: url(../images/about-img.jpg);
+  background-size: cover;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 3fr 6fr 1fr;
+}
