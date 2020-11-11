@@ -6,25 +6,25 @@ import PDF from "../images/pdf.png";
 import Voice from "../images/voice.svg";
 import Resume from "../doc/resume.pdf";
 import {
-  mainWrapper,
-  mainArea,
+  contactWrapper,
+  contactArea,
   iconWrapper,
   icon,
   contactMainTitle,
-  contactWrapper,
+  contactTitleWrapper,
   contactTitle,
 } from "./Styles.module.css";
 
 export default function Contact() {
   return (
     <>
-      <main className={mainWrapper}>
-        <div className={mainArea}>
+      <main className={contactWrapper}>
+        <div className={contactArea}>
           <h4 className={contactMainTitle}>
             Social Media and Contact Information
           </h4>
           <hr />
-          <div className={contactWrapper}>
+          <div className={contactTitleWrapper}>
             <div className={contactTitle}>
               <h5>
                 <strong>Name: &nbsp;</strong>

@@ -28,18 +28,24 @@
 .icon {
   width: 20px;
 }
-.mainWrapper {
+.contactWrapper {
   background-image: url(../images/about-img.jpg);
   background-size: cover;
   height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
 }
-.mainArea {
-  margin: 0 100px;
-  padding-top: 0;
+.contactArea {
+  grid-column-start: 2;
+  margin: 20px 0;
+  padding: 30px;
+  width: 100%;
+  place-self: start;
   background-color: white;
-  border-radius: 0 0 10px 10px;
+  border-radius: 10px;
+  box-shadow: -4px 4px 20px 4px #999;
 }
-.contactWrapper {
+.contactTitleWrapper {
   margin-top: 20px;
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -75,4 +81,20 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 3fr 6fr 1fr;
+}
+.postWrapper {
+  background-image: url(../images/about-img.jpg);
+  background-size: contain;
+  background-repeat: repeat-y;
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+}
+.postArea {
+  grid-column-start: 2;
+  margin: 20px 0;
+  padding: 30px;
+  place-self: start;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: -4px 4px 20px 4px #999;
 }
